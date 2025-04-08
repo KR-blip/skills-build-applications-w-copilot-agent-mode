@@ -6,13 +6,13 @@ from .models import User, Team, Activity, Leaderboard, Workout
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = 'http://localhost:8000/'
+    base_url = 'https://ubiquitous-couscous-jvqr449wvx3p979-8000.app.github.dev/'
     return Response({
-        'users': base_url + 'api/users/',
-        'teams': base_url + 'api/teams/',
-        'activities': base_url + 'api/activities/',
-        'leaderboard': base_url + 'api/leaderboard/',
-        'workouts': base_url + 'api/workouts/'
+        'users': base_url + 'api/users/?format=api',
+        'teams': base_url + 'api/teams/?format=api',
+        'activities': base_url + 'api/activities/?format=api',
+        'leaderboard': base_url + 'api/leaderboard/?format=api',
+        'workouts': base_url + 'api/workouts/?format=api'
     })
 
 class UserViewSet(viewsets.ModelViewSet):
